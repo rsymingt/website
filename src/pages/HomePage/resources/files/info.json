@@ -1,0 +1,200 @@
+{
+    "skills": {
+        "experienced": [
+                "C, C++",
+                "HTML, CSS, Javascript, JQuery, PHP, NodeJS, React, Sass, MySQL",
+                "Java",
+                "Python"
+        ],
+        "knowledgable": [
+                "Bash",
+                "Visual Basic"
+        ]
+    },
+
+    "interests": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Data Analysis",
+        "Parallel Computing",
+        "Set Theory",
+        "Graph Theory"
+    ],
+
+    "courses": {
+        "show": [
+            "CIS*3700 0101 Intro to Intelligent Systems",
+            "CIS*4520 0102 Introduction to Cryptography",
+            "CIS*4650 0101 Compilers",
+            "CIS*4820 0101 Game Programming",
+            "MATH*3510 01 Biomathematics"
+        ],
+        "more": [
+            "CIS*3090 0101 Parallel Programming",
+            "CIS*3210 0101 Computer Networks",
+            "CIS*3530 0101 Data Base Systems & Concepts",
+            "CIS*3750 0104 Syst Analysis & Design in App",
+            "CIS*3120 0102 Digital Systems I",
+            "CIS*3760 0104 Software Engineering",
+            "MATH*2130 0106 Numerical Methods",
+            "MATH*2210 01 Advanced Calculus II",
+            "STAT*2040 02 Statistics I",
+            "CIS*3150 0101 Theory of Computation",
+            "MATH*2200 01 Advanced Calculus I",
+            "MATH*3100 0101 Differential Equations II",
+            "MCS*2100 DE Personal Financial Mgmt",
+            "CIS*2750 0106 Software System Dvlmt & Intgrn",
+            "CIS*3110 0104 Operating Systems",
+            "CIS*3490 0101 Analysis & Des. of Comp. Algo.",
+            "MATH*1160 01 Linear Algebra I",
+            "CIS*2030 0104 Structure/Applicat - Microcomp",
+            "CIS*2430 0103 Object Oriented Programming",
+            "CIS*2520 0105 Data Structures",
+            "CIS*2910 0103 Discrete Structures in Comp II",
+            "MATH*2270 0112 Applied Differential Equations",
+            "CIS*1910 0105 Discrete Structures in Comp I",
+            "CIS*2500 0103 Intermediate Programming",
+            "GEOG*1350 01 Earth: Hazards & Global Change",
+            "MATH*1210 0102 Calculus II",
+            "PHYS*1080 0301 Physics for Life Sciences",
+            "CIS*1250 0102 Software Design I",
+            "CIS*1500 0214 Introduction to Programming",
+            "GEOG*1200 0102 Society and Space",
+            "MATH*1200 0101 Calculus I"
+        ]
+    },
+
+    "experiences": [
+        {
+            "name": "Rotary Local Lager",
+            "title": "Web Developer",
+            "address": "Rotary Club of Guelph",
+            "type": "Volunteer",
+            "datestart": "2017",
+            "dateend": "current",
+            "description": [
+                "The Rotary Club of Guelph was looking for a Web Developer to assist ",
+                "in developing a website to display their new Local Lager product ",
+                "and the initiatives that it supports"
+            ],
+            "picture": "imgs/RLL.png",
+            "link": "http://rotarylocallager.ca"
+        },
+        {
+            "name": "Mushrooms Canada",
+            "title": "Web Developer / Social Media",
+            "address":["660 Speedvale Avenue West, Suite #302, ",
+                    "Guelph, Ontario, ",
+                    "N1K 1E5, "],
+            "phone": "519-829-4125",
+            "type": "Summer Intern",
+            "datestart": "May 2018",
+            "dateend": "Aug 2018",
+            "description":[
+                "Created a grower member database with a secure login that allowed ",
+                "Mushrooms Canada employees to view, download, and upload member information. ",
+                "Some features included; filtering specific columns; searching current view; ",
+                "and dynamically adding, removing, or changing attributes or information. "
+            ],
+            "picture": "https://scontent-yyz1-1.xx.fbcdn.net/v/t1.0-9/424976_379126965440237_777713495_n.jpg?_nc_cat=110&_nc_ht=scontent-yyz1-1.xx&oh=290fd2d3f96a3642f315f05479c6aeb6&oe=5C974E2E",
+            "link": "https://www.mushrooms.ca"
+        },
+        {
+            "name": "AMJ Campbell",
+            "title": "Furniture Mover",
+            "address": "305 Industrial Road, Cambridge, ON N3H 4R7, Canada",
+            "phone": "+1-519-896-3366",
+            "type": "",
+            "datestart": "summer 2016",
+            "dateend": "summer 2017",
+            "description":[
+                "Worked in 2 - 10 person teams to plan, coordinate, and execute ",
+                "commercial and residential relocation efficiently. "
+            ],
+            "picture": "https://www.amjcampbell.com/static/8838027e121fbb4c8b1c01c8b81edb85.svg",
+            "link": "https://www.amjcampbell.com/en"
+        },
+        {
+            "name": "Digital Signage System",
+            "title": "Software Development",
+            "type": "School",
+            "datestart": "",
+            "dateend": "Fall 2018",
+            "description":[
+                "I worked in a team of 6 people using the agile methodology to brainstorm ",
+                "design, develop, get feedback, and implement a Digital Signage System ",
+                "meant for a client we created as The University of Guelph "
+            ],
+            "picture": "imgs/digital-sign.png",
+            "link": null
+        },
+        {
+            "name": "Book EReader",
+            "title": "Software Development",
+            "type": "School",
+            "datestart": "",
+            "dateend": "Winter 2017",
+            "description":[
+                "I worked in a team of 6 people using the agile methodology to brainstorm ",
+                "design, develop, get feedback, and implement a set of features to ",
+                "improve an open source project called BookyMcBookFace "
+            ],
+            "picture": "imgs/ereader.png",
+            "link": "https://github.com/quaap/BookyMcBookface/tree/master/app"
+        }
+    ],
+
+    "schoolExperiences": [
+        {
+            "name": "University of Guelph",
+            "title": "BCH.CS-MATH",
+            "address": "50 Stone Rd E, Guelph, ON N1G 2W1",
+            "type": "",
+            "datestart": "2015",
+            "dateend": "current",
+            "description":[
+                ""
+            ],
+            "picture": "imgs/university-of-guelph-gryphon-sign.jpg",
+            "link": "https://www.ugdsb.ca/ccvi/"
+        },
+        {
+            "name": "Centennial CVI",
+            "title": "OSSD",
+            "address": "289 College Ave W, Guelph, ON N1G 1S9",
+            "type": "With Honours",
+            "datestart": "",
+            "dateend": "Earned 2015",
+            "description":[
+                ""
+            ],
+            "picture": "https://www.mundoenred.com/img/schools/picture_5384.jpg",
+            "link": "https://www.ugdsb.ca/ccvi/"
+        }
+    ],
+
+    "projects": [
+        {
+            "name": "Decision Tree Algorithm",
+            "subname": "",
+            "language": "C++",
+            "description":[
+                "Using the decision tree algorithm I created a program to receive an ",
+                "input .csv file as training data. Using the training data I created ",
+                "a tree that created nodes dependant on the highest set entropy given ",
+                "the subset of data"
+            ],
+            "link": "https://github.com/rsymingt/ML_decision_tree"
+        },
+        {
+            "name": "Project Organization",
+            "subname": "ProjectO",
+            "language": "C++",
+            "description":[
+                "Using an AVL tree structure I created a program to index keywords in ",
+                "a paragraph to represent a topic"
+            ],
+            "link": "https://github.com/rsymingt/projecto_cplus"
+        }
+    ]
+}
