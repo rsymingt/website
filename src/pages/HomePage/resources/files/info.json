@@ -73,9 +73,9 @@
             "datestart": "2017",
             "dateend": "current",
             "description": [
-                "The Rotary Club of Guelph was looking for a Web Developer to assist ",
-                "in developing a website to display their new Local Lager product ",
-                "and the initiatives that it supports"
+                "To advertise and raise awareness for one of the latest fundraisers ",
+                "for Guelph and Peterborough Rotary Clubs, ",
+                " I developed the first Rotary Local Lager website. "
             ],
             "picture": "imgs/RLL.png",
             "link": "http://rotarylocallager.ca"
@@ -123,7 +123,7 @@
             "description":[
                 "I worked in a team of 6 people using the agile methodology to brainstorm ",
                 "design, develop, get feedback, and implement a Digital Signage System ",
-                "meant for a client we created as The University of Guelph "
+                "meant for our client, the University of Guelph. "
             ],
             "picture": "imgs/digital-sign.png",
             "link": null
@@ -137,7 +137,7 @@
             "description":[
                 "I worked in a team of 6 people using the agile methodology to brainstorm ",
                 "design, develop, get feedback, and implement a set of features to ",
-                "improve an open source project called BookyMcBookFace "
+                "improve an open source project called BookyMcBookFace. "
             ],
             "picture": "imgs/ereader.png",
             "link": "https://github.com/quaap/BookyMcBookface/tree/master/app"
@@ -182,7 +182,7 @@
                 "Using the decision tree algorithm I created a program to receive an ",
                 "input .csv file as training data. Using the training data I created ",
                 "a tree that created nodes dependant on the highest set entropy given ",
-                "the subset of data"
+                "the subset of data."
             ],
             "link": "https://github.com/rsymingt/ML_decision_tree"
         },
@@ -192,7 +192,7 @@
             "language": "C++",
             "description":[
                 "Using an AVL tree structure I created a program to index keywords in ",
-                "a paragraph to represent a topic"
+                "a paragraph to represent a topic."
             ],
             "link": "https://github.com/rsymingt/projecto_cplus"
         }

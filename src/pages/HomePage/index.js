@@ -211,7 +211,7 @@ class HomePage extends React.Component {
                         <Row className="justify-content-center">
                             <Col md="12">
                                 <p className="text-center lead">
-                                Hello, I am a 4<sup>th</sup> year Computer Science student
+                                I am a 4<sup>th</sup> year Computer Science student
                                 minoring in Mathematics. I have a keen interest in learning
                                 new and innovative programming practices, languages, and techniques.
                                 I have some experience working in groups gathering
@@ -231,8 +231,8 @@ class HomePage extends React.Component {
                                 </CardImage>
                                 <CardBody>
                                     <CardText>
-                                        I have had great opportunities to meet new people, learn
-                                        new skills, and work in a team
+                                        I have had great opportunities meeting new people, learning
+                                        new skills, and working in teams.
                                     </CardText>
                                     <a className="btn btn-primary float-right"
                                     href="#experience"
@@ -252,8 +252,8 @@ class HomePage extends React.Component {
                                 </CardImage>
                                 <CardBody>
                                     <CardText>
-                                        A listing of all my Technical Skills, Interests, and
-                                        all of the courses I've completed to date
+                                        A listing of my technical skills, interests, and
+                                        all of the courses I've completed to date.
                                     </CardText>
                                     <a className="btn btn-primary float-right"
                                     href="#skills"
@@ -273,8 +273,8 @@ class HomePage extends React.Component {
                                 </CardImage>
                                 <CardBody>
                                     <CardText>
-                                        I have created several different pieces of software
-                                        to help me in my day to day life
+                                        To help me in my day-to-day life I have created
+                                        several different software applications.
                                     </CardText>
                                     <a className="btn btn-primary float-right"
                                     href="#projects"

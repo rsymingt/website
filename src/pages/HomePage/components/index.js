@@ -145,7 +145,7 @@ const Experience = (props) => {
     } = props;
 
     return(
-        <Row className="mx-4 px-4 mt-4">
+        <Row className="mt-4">
             <Col md="4" className="d-flex flex-column justify-content-center">
                 <ExperienceImage key={picture} src={picture} {...props} />
             </Col>
