@@ -19,7 +19,13 @@
   "devDependencies": {
     "classnames": "^2.2.6",
     "jquery": "^3.3.1",
+    "mdbreact": "^4.8.5-patch.1",
+    "node-sass": "^4.11.0",
+    "react": "^16.6.3",
+    "react-blur-image-loader": "^0.2.2",
+    "react-dom": "^16.6.3",
     "react-lazyload": "^2.3.0",
+    "react-scripts": "^2.0.5",
     "react-with-styles": "^3.2.1",
     "renamer": "^1.0.0",
     "rimraf": "^2.6.2"

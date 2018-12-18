@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./style.css";
+import "./style.sass";
 import smoothScroll from "./components/smoothScroll";
 
 import {
@@ -21,6 +22,7 @@ import {
     Experience,
     List,
     Arrow,
+    ImageLoader,
 } from "./components/";
 
 import {
@@ -75,6 +77,7 @@ class HomePage extends React.Component {
           description,
           link,
           picture,
+          preview,
       } = obj?obj:{};
 
       const isopen = this.state.modal.isopen;
@@ -308,7 +311,7 @@ class HomePage extends React.Component {
                 {schoolExperiences && schoolExperiences.map((school, index) => {
                     return(
                         <Animation key={school.name} reveal type="fadeInUp" duration="500ms">
-                            <Experience index={index} onModalClick={(i) => this.modal(experiences, i)} {...school} />
+                            <Experience index={index} onModalClick={(i) => this.modal(schoolExperiences, i)} {...school} />
                         </Animation>
                     );
                 })}
@@ -388,7 +391,9 @@ class HomePage extends React.Component {
             </ModalHeader>
 
             <ModalBody className="d-flex flex-column align-items-center">
-                <img className="img-fluid" src={picture} {...obj} alt={name}/>
+                {/*<img className="img-fluid" src={picture} {...obj} alt={name}/>*/}
+                <ImageLoader src={picture} preview={preview} alt={name} className="mx-auto img-fluid"/>
+
                 {description}
             </ModalBody>
 

@@ -77,7 +77,8 @@
                 "for Guelph and Peterborough Rotary Clubs, ",
                 " I developed the first Rotary Local Lager website. "
             ],
-            "picture": "imgs/RLL.png",
+            "picture": "http://rsymingt.com/imgs/RLL.png",
+            "preview": "/imgs/RLL_low.png",
             "link": "http://rotarylocallager.ca"
         },
         {

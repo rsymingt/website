@@ -4,6 +4,7 @@ import React from "react";
 import classNames from "classnames";
 import smoothScroll from "./smoothScroll";
 import $ from "jquery";
+import BlurImageLoader from "react-blur-image-loader";
 
 import {
   Container,
@@ -89,6 +90,83 @@ const Project = (props) => {
     );
 }
 
+const _loaded = {};
+
+class ImageLoader extends React.Component {
+
+  //initial state: image loaded stage
+  state = {
+    loaded: _loaded[this.props.src]
+  };
+
+  //define our loading and loaded image classes
+  static defaultProps = {
+    className: "",
+    loadingClassName: "img-loading",
+    loadedClassName: "img-loaded"
+  };
+
+  //image onLoad handler to update state to loaded
+  onLoad = () => {
+    _loaded[this.props.src] = true;
+    this.setState(() => ({ loaded: true }));
+  };
+
+
+  render() {
+
+    let { className, loadedClassName, loadingClassName, ...props } = this.props;
+    const {preview} = props;
+    const {loaded} = this.state;
+
+    className = `${className} ${loaded
+      ? loadedClassName
+      : loadingClassName}`;
+
+    return (
+      (!loaded) ? (
+          <div className="position-relative">
+            {preview ?
+              <img
+             src={this.props.preview}
+             onClick={this.props.onClick}
+             className={className}
+             style={{
+               position: "absolute",
+               top:0,
+               right:0,
+               left:0,
+               bottom:0,
+             }}
+             /> :
+             <div className="d-flex align-items-center justify-content-center" style={{
+               position: "absolute",
+               top:0,
+               right:0,
+               left:0,
+               bottom:0,
+             }}>
+              <div className="loader">
+              </div>
+            </div>}
+             <img
+              src={this.props.src}
+              style={{opacity: 0}}
+              onClick={this.props.onClick}
+              className={className}
+              onLoad={this.onLoad} />
+            </div>
+      ) :
+        <img
+         src={this.props.src}
+         onClick={this.props.onClick}
+         className={className}
+         onLoad={this.onLoad} />
+
+    );
+  }
+}
+
 class ExperienceImage extends React.Component {
     state = {
         cursorPos: {},
@@ -109,17 +187,22 @@ class ExperienceImage extends React.Component {
       }
 
     render(){
-        const props = this.props;
+
+      const {preview, ...props} = this.props;
 
         return(
             <Card onClick={this.handleClick}>
-                <View hover className="d-flex justify-content-center">
-                    <LazyLoad once>
-                        <CardImage
+                <View hover>
+                    <LazyLoad>
+                        {/*<CardImage
                         src={props.src}
                         className="img-fluid"
                         waves={false}
-                        />
+                        />*/}
+                        {/*<BlurImageLoader
+                        src={props.src}
+                        />*/}
+                        <ImageLoader src={props.src} preview={preview} className="mx-auto img-fluid"/>
                     </LazyLoad>
                     <a href="#!"><Mask overlay="grey-light"/></a>
                     <Waves cursorPos={this.state.cursorPos}/>
@@ -141,6 +224,7 @@ const Experience = (props) => {
         dateend,
         description,
         picture,
+        preview,
         link,
     } = props;
 
@@ -290,4 +374,5 @@ export{
     Experience,
     List,
     Arrow,
+    ImageLoader,
 }
