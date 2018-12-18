@@ -257,7 +257,8 @@ class Arrow extends React.Component{
                 bottom: "15px",
                 right: "15px",
                 width: "50px",
-                height: "50px"
+                height: "50px",
+                zIndex: "1",
             }} className="arrow">
                 <Animation type={show?"fadeInUp":"fadeOutDown"} duration="500ms">
                     <a className="btn btn-primary d-flex justify-content-center align-items-center"
