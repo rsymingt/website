@@ -3,6 +3,7 @@ import React from "react";
 import "./style.css";
 import "./style.sass";
 import smoothScroll from "./components/smoothScroll";
+import $ from "jquery";
 
 import {
     skills,
@@ -65,6 +66,10 @@ class HomePage extends React.Component {
                 obj: array[index],
             }
         })
+    }
+
+    componentDidMount(){
+      $(window).trigger("scroll");
     }
 
   render() {

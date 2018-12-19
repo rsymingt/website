@@ -196,6 +196,51 @@
                 "a paragraph to represent a topic."
             ],
             "link": "https://github.com/rsymingt/projecto_cplus"
+        },
+        {
+          "name": "React PDF Viewer",
+          "subname": "react-pdf-viewer",
+          "description": [
+            ""
+          ],
+          "language": "React",
+          "link": "https://github.com/rsymingt/react-pdf-viewer"
+        },
+        {
+          "name": "Threaded Merge Sort Algorithm",
+          "subname": "threaded-merge-sort",
+          "description": [
+            ""
+          ],
+          "language": "C",
+          "link": "https://github.com/rsymingt/threaded_merge_sort"
+        },
+        {
+          "name": "Basic Assembly Programs",
+          "subname": "assembly-programs",
+          "description": [
+            ""
+          ],
+          "language": "Assembly",
+          "link": "https://github.com/rsymingt/assembly_programs"
+        },
+        {
+          "name": "Space Simulator",
+          "subname": "space-simulator",
+          "description": [
+            ""
+          ],
+          "language": "Processing",
+          "link": "https://github.com/rsymingt/space_simulator"
+        },
+        {
+          "name": "First Robotics Competition Program",
+          "subname": "robot",
+          "description": [
+            ""
+          ],
+          "language": "Java",
+          "link": "https://github.com/rsymingt/robot"
         }
     ]
 }

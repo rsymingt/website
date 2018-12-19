@@ -4,8 +4,6 @@
   "private": true,
   "dependencies": {
     "mdbreact": "4.8.5-patch.1",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
     "react-scripts": "2.0.5"
   },
   "scripts": {

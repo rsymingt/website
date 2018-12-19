@@ -4,7 +4,6 @@ import React from "react";
 import classNames from "classnames";
 import smoothScroll from "./smoothScroll";
 import $ from "jquery";
-import BlurImageLoader from "react-blur-image-loader";
 
 import {
   Container,
@@ -13,7 +12,7 @@ import {
   Fa,
   View,
   Animation,
-  Card, CardImage,
+  Card,
   // Modal, ModalBody, ModalHeader, ModalFooter,
   Mask, Waves
 
@@ -131,6 +130,7 @@ class ImageLoader extends React.Component {
              src={this.props.preview}
              onClick={this.props.onClick}
              className={className}
+             alt={props.alt}
              style={{
                position: "absolute",
                top:0,
@@ -153,12 +153,14 @@ class ImageLoader extends React.Component {
               src={this.props.src}
               style={{opacity: 0}}
               onClick={this.props.onClick}
+              alt={props.alt}
               className={className}
               onLoad={this.onLoad} />
             </div>
       ) :
         <img
          src={this.props.src}
+         alt={props.alt}
          onClick={this.props.onClick}
          className={className}
          onLoad={this.onLoad} />
@@ -193,16 +195,8 @@ class ExperienceImage extends React.Component {
         return(
             <Card onClick={this.handleClick}>
                 <View hover>
-                    <LazyLoad>
-                        {/*<CardImage
-                        src={props.src}
-                        className="img-fluid"
-                        waves={false}
-                        />*/}
-                        {/*<BlurImageLoader
-                        src={props.src}
-                        />*/}
-                        <ImageLoader src={props.src} preview={preview} className="mx-auto img-fluid"/>
+                    <LazyLoad once throttle={250}>
+                        <ImageLoader src={props.src} alt={props.alt} preview={preview} className="mx-auto img-fluid"/>
                     </LazyLoad>
                     <a href="#!"><Mask overlay="grey-light"/></a>
                     <Waves cursorPos={this.state.cursorPos}/>
@@ -224,14 +218,14 @@ const Experience = (props) => {
         dateend,
         description,
         picture,
-        preview,
+        // preview,
         link,
     } = props;
 
     return(
         <Row className="mt-4">
             <Col md="4" className="d-flex flex-column justify-content-center">
-                <ExperienceImage key={picture} src={picture} {...props} />
+                <ExperienceImage alt={name} key={picture} src={picture} {...props} />
             </Col>
             <Col md="8">
                 <h2 className="h2-responsive"><a rel="noopener noreferrer" href={link} target="_blank" >{name}</a></h2>

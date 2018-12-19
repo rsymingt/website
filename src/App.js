@@ -20,7 +20,7 @@ const links = [
     },
     {
         name: "Project Board",
-        path: "/projects",
+        path: "/project-board",
     }
 ]
 
@@ -48,6 +48,8 @@ class App extends Component {
         onClick={this.toggleCollapse("mainNavbarCollapse")}
       />
     );
+
+    console.log(this);
     return (
       <Router>
         <div className="flyout">
