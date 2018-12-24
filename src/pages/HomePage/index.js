@@ -2,8 +2,9 @@ import React from "react";
 
 import "./style.css";
 import "./style.sass";
-import smoothScroll from "./components/smoothScroll";
+
 import $ from "jquery";
+import smoothScroll from "./components/smoothScroll";
 
 import {
     skills,

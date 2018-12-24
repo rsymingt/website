@@ -12,9 +12,11 @@ class Routes extends React.Component {
         <Route exact path="/"
         render={(props) => <HomePage {...props} />}
         />
+
         <Route path="/project-board"
         render={(props) => <ProjectBoard {...props}/>}
         />
+
         <Route
           render={function() {
             return <h1>Not Found</h1>;

@@ -2,7 +2,7 @@ body {
 	background:#ededed;
 }
 
-content {
+.content {
     display: block;
     max-width: 1280px;
 }

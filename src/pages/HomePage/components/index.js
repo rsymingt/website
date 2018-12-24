@@ -4,6 +4,7 @@ import React from "react";
 import classNames from "classnames";
 import smoothScroll from "./smoothScroll";
 import $ from "jquery";
+import LazyLoad from "react-lazyload";
 
 import {
   Container,
@@ -14,11 +15,10 @@ import {
   Animation,
   Card,
   // Modal, ModalBody, ModalHeader, ModalFooter,
-  Mask, Waves
-
+  Mask, Waves,
+  ListGroup, ListGroupItem,
 } from "mdbreact";
 
-import LazyLoad from "react-lazyload";
 
 const Banner = (props) => {
 
@@ -43,7 +43,7 @@ const Section = (props) => {
 const Content = (props) => {
 
     return(
-        <content {...props} />
+        <div className="content" {...props} />
     );
 }
 
@@ -267,15 +267,15 @@ class List extends React.Component{
             <div style={{
                 width: "fit-content"
             }}>
-                <ul>
+                <ListGroup>
                     {show && show.map((item) => {
                         startDelay += increment;
                         return(
-                            <li key={item}>
+                            <ListGroupItem key={item}>
                                 <Animation reveal type="fadeIn" delay={startDelay+"ms"}>
                                     {item}
                                 </Animation>
-                            </li>
+                            </ListGroupItem>
                         );
                     })}
                     {more && !collapse &&
@@ -286,11 +286,11 @@ class List extends React.Component{
                         }}>show more</a>
                     }
                     {collapse && more && more.map((item, index) => (
-                        <li key={item}>
+                        <ListGroupItem key={item}>
                             <Animation type="fadeIn" delay={index*increment+"ms"}>
                                 {item}
                             </Animation>
-                        </li>
+                        </ListGroupItem>
                     ))}
                     {collapse &&
                         <a className="float-right" href={anchor? "#"+anchor : "#!"}
@@ -300,7 +300,7 @@ class List extends React.Component{
                                 smoothScroll(e);
                         }}>show less</a>
                     }
-                </ul>
+                </ListGroup>
             </div>
         );
     }
@@ -320,8 +320,12 @@ class Arrow extends React.Component{
         })
     }
 
-    componentWillMount(){
+    componentDidMount(){
         window.addEventListener("scroll", this.show);
+    }
+
+    componentWillUnmount(){
+        window.removeEventListener("scroll", this.show);
     }
 
     render(){
