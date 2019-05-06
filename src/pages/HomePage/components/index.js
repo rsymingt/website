@@ -4,7 +4,6 @@ import React from "react";
 import classNames from "classnames";
 import smoothScroll from "./smoothScroll";
 import $ from "jquery";
-import LazyLoad from "react-lazyload";
 
 import {
   Container,
@@ -14,11 +13,10 @@ import {
   View,
   Animation,
   Card,
-  // Modal, ModalBody, ModalHeader, ModalFooter,
+//   Modal, ModalBody, ModalHeader, ModalFooter,
   Mask, Waves,
   ListGroup, ListGroupItem,
 } from "mdbreact";
-
 
 const Banner = (props) => {
 
@@ -65,7 +63,10 @@ const Project = (props) => {
     return(
         <Row>
             <Col md="4">
-                <h2 className="h2-responsive">
+                <h2 className="h2-responsive" style={{
+                    textOverflow: "ellipsis",
+                    overflow: "hidden",
+                }}>
                     <a rel="noopener noreferrer" target="_blank" href={props.link}>
                         {props.name}
                     </a>
@@ -140,7 +141,7 @@ class ImageLoader extends React.Component {
              }}
              /> :
              <div className="d-flex align-items-center justify-content-center" style={{
-               position: "absolute",
+            //    position: "absolute",
                top:0,
                right:0,
                left:0,
@@ -172,32 +173,17 @@ class ImageLoader extends React.Component {
 class ExperienceImage extends React.Component {
     state = {
         cursorPos: {},
+        modal: false
     }
-
-    handleClick = (e) => {
-        // Get Cursor Position
-        const {index, onModalClick} = this.props;
-        let cursorPos = {
-          top: e.clientY,
-          left: e.clientX,
-          time: Date.now()
-        };
-        this.setState({
-            cursorPos: cursorPos,
-        })
-         onModalClick(index);
-      }
 
     render(){
 
       const {preview, ...props} = this.props;
 
-        return(
-            <Card onClick={this.handleClick}>
+      return(
+            <Card onClick={() => props.onModalClick(props.index)}>
                 <View hover>
-                    <LazyLoad once throttle={250}>
-                        <ImageLoader src={props.src} alt={props.alt} preview={preview} className="mx-auto img-fluid"/>
-                    </LazyLoad>
+                    <ImageLoader src={props.src} alt={props.alt} preview={preview} className="mx-auto img-fluid"/>
                     <a href="#!"><Mask overlay="grey-light"/></a>
                     <Waves cursorPos={this.state.cursorPos}/>
                 </View>
@@ -218,8 +204,6 @@ const Experience = (props) => {
         dateend,
         description,
         picture,
-        // preview,
-        link,
     } = props;
 
     return(
@@ -228,7 +212,10 @@ const Experience = (props) => {
                 <ExperienceImage alt={name} key={picture} src={picture} {...props} />
             </Col>
             <Col md="8">
-                <h2 className="h2-responsive"><a rel="noopener noreferrer" href={link} target="_blank" >{name}</a></h2>
+                <h2 className="h2-responsive">
+                    <a onClick={() => props.onModalClick(props.index)} className="link" href="#!">{name}</a>
+                    {/* <a rel="noopener noreferrer" href={link} target="_blank" >{name}</a> */}
+                </h2>
                 <h5 className="h5-responsive">&nbsp;{title} -- {type && (type+" --")} {datestart ? (datestart+" to "+dateend) : dateend}</h5>
                 {address && <h6 className="h6-responsive">&nbsp;&nbsp;{address}</h6>}
                 {phone && <h6 className="h6-responsive">&nbsp;&nbsp;{phone}</h6>}
@@ -253,9 +240,19 @@ class List extends React.Component{
         })
     }
 
+    componentDidUpdate(){
+        const {collapse} = this.state;
+        const {moreHandle} = this.props;
+
+        if(moreHandle && collapse)
+        {
+            // moreHandle();
+        }
+    }
+
     render(){
         const {props} = this;
-        const {show, more, anchor} = props;
+        const {show, more, anchor, className, refs} = props;
         const {collapse} = this.state;
 
         var {startDelay, increment} = props;
@@ -264,27 +261,18 @@ class List extends React.Component{
         if(!increment) increment = 0;
 
         return(
-            <div style={{
-                width: "fit-content"
-            }}>
-                <ListGroup>
+            <div className="display-flex flex-1 flex-col">
+                <ListGroup className={className}>
                     {show && show.map((item) => {
                         startDelay += increment;
                         return(
                             <ListGroupItem key={item}>
-                                <Animation reveal type="fadeIn" delay={startDelay+"ms"}>
+                                <Animation ref={refs && refs[0](refs[1])} reveal type="fadeIn" delay={startDelay+"ms"}>
                                     {item}
                                 </Animation>
                             </ListGroupItem>
                         );
                     })}
-                    {more && !collapse &&
-                        <a className="float-right" href={anchor ? "#"+anchor : "#!"} onClick={(e) => {
-                            this.toggle();
-                            if(anchor)
-                                smoothScroll(e);
-                        }}>show more</a>
-                    }
                     {collapse && more && more.map((item, index) => (
                         <ListGroupItem key={item}>
                             <Animation type="fadeIn" delay={index*increment+"ms"}>
@@ -292,15 +280,31 @@ class List extends React.Component{
                             </Animation>
                         </ListGroupItem>
                     ))}
-                    {collapse &&
+                </ListGroup>
+                {more && !collapse &&
+                    <div>
+                        <a className="float-right bg-clear" href={anchor ? "#"+anchor : "#!"} onClick={(e) => {
+                            this.toggle();
+                            if(anchor)
+                                smoothScroll(e);
+                        }}>show more</a>
+                    </div>
+                }
+                {collapse &&
+                    <div>
                         <a className="float-right" href={anchor? "#"+anchor : "#!"}
                         onClick={(e) => {
                             this.toggle();
                             if(anchor)
                                 smoothScroll(e);
                         }}>show less</a>
-                    }
-                </ListGroup>
+                    </div>
+                }
+                { !more &&
+                    <div>
+                        <p className="float-right bg-clear cursor-default transparent m-0">show more</p>
+                    </div>
+                }
             </div>
         );
     }
@@ -314,6 +318,7 @@ class Arrow extends React.Component{
 
     show = () => {
         let show = $(window).scrollTop() ? true : false;
+        if(show === this.state.show) return;
         this.setState({
             show: show,
             first: this.state.first&&(show?false:true)

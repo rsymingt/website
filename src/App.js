@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import {
-  NavbarBrand,
-  NavbarNav,
-  NavbarToggler,
-  Collapse,
-  NavItem,
-  NavLink
-} from "mdbreact";
+// import {
+//   NavbarBrand,
+//   NavbarNav,
+//   NavbarToggler,
+//   Collapse,
+//   NavItem,
+//   NavLink
+// } from "mdbreact";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 
@@ -14,21 +14,26 @@ import Navbar from "./components/Navbar";
 
 import Routes from "./Routes";
 
+import HomePage from "./pages/HomePage/";
+// import ProjectBoard from "./pages/ProjectBoard/";
+
 const links = [
     {
         name: "Home",
         path: "/",
+        component: HomePage
     },
-    {
-        name: "Project Board",
-        path: "/project-board",
-    }
+    // {
+    //     name: "Project Board",
+    //     path: "/project-board",
+    //     component: ProjectBoard
+    // }
 ]
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return (
@@ -37,7 +42,7 @@ class App extends Component {
         <Navbar links={links}
         />
           <main>
-            <Routes/>
+            <Routes links={links}/>
           </main>
 
         </div>

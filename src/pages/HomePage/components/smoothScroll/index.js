@@ -6,7 +6,7 @@ const smoothScroll = (event) => {
     let el = event.target;
     // Make sure this.hash has a value before overriding default behavior
 
-    if (el.hash && el.hash !== "") {
+    if (el.hash && (el.hash !== ""))  {
       // Prevent default anchor click behavior
       event.preventDefault();
 

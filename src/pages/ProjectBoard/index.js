@@ -1,17 +1,26 @@
 
 import React from "react";
 
-import {Route, Link} from "react-router-dom";
+import {
+  Route, 
+  // Link
+} from "react-router-dom";
 
 import $ from "jquery";
+
 
 import {
   Container,
   Button,
-  Input, TextArea,
+  Input,
+  // TextArea,
   Modal, ModalBody, ModalFooter, ModalHeader,
   ListGroup, ListGroupItem,
 } from "mdbreact"
+
+// import Auth from "auth.js";
+
+// console.log(Auth.isAuthenticated);
 
 class ProjectForm extends React.Component{
   state = {
@@ -30,7 +39,7 @@ class ProjectForm extends React.Component{
   }
 
   submit = (event) => {
-    const {name, description, footer} = this.state;
+    const {name, description} = this.state;
     const {onSubmit, toggle} = this.props;
 
     // CHANGE TO DYNAMIC VALIDATION
@@ -149,7 +158,7 @@ class ProjectList extends React.Component{
           {projects && projects.map((project, index) => (
             <ListGroupItem
             onClick={(e) => onClick(index)}
-            active={currentProj == index}
+            active={currentProj === index}
             index={index}
             href="#"
             key={index}
@@ -223,11 +232,11 @@ class Project extends React.Component{
 
 export default class ProjectBoard extends React.Component{
 
-  constructor(props){
-    super(props);
+  // constructor(props){
+  //   super(props);
 
-    // this.pList = React.createRef();
-  }
+  //   // this.pList = React.createRef();
+  // }
 
   state={
     modal: false,
@@ -332,9 +341,9 @@ export default class ProjectBoard extends React.Component{
         <Project style={{
           maxHeight: "100%",
           overflowY: "auto",
-        }} className="p-0 m-0" style={{
           flex: "2"
-        }} id={currentProj}/>
+        }} className="p-0 m-0"
+        id={currentProj}/>
 
         <Modal
         isOpen={modal}

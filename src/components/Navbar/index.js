@@ -14,7 +14,6 @@ import {
 
 class MyNavbar extends React.Component{
 
-
   state = {
     collapseID: "",
     transparent: true,
@@ -30,13 +29,13 @@ class MyNavbar extends React.Component{
 
   updatePage = (path) => {
     this.setState({
-      transparent: path == "/" ? true : false,
+      transparent: path === "/" ? true : false,
     })
   }
 
   componentDidMount(){
     this.setState({
-      transparent: this.props.location.pathname == "/" ? true : false,
+      transparent: this.props.location.pathname === "/" ? true : false,
     })
   }
 
@@ -44,13 +43,13 @@ class MyNavbar extends React.Component{
     const {links} = this.props;
     const {transparent} = this.state;
 
-    const overlay = (
-      <div
-        id="sidenav-overlay"
-        style={{ backgroundColor: "transparent" }}
-        onClick={this.toggleCollapse("mainNavbarCollapse")}
-      />
-    );
+    // const overlay = (
+    //   <div
+    //     id="sidenav-overlay"
+    //     style={{ backgroundColor: "transparent" }}
+    //     onClick={this.toggleCollapse("mainNavbarCollapse")}
+    //   />
+    // );
 
     return(
       <div>
